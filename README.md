@@ -6,130 +6,42 @@ download from release
 ### Install extensions
 Please Download and install the following extensions manually
 
-#### java support
-Name: Extension Pack for Java
-Id: vscjava.vscode-java-pack
-Description: Popular extensions for Java development that provides Java IntelliSense, debugging, testing, Maven/Gradle support, project management and more
-Version: 0.25.12
+#### C/C++ Extension Pack
+Name: C/C++ Extension Pack
+Id: ms-vscode.cpptools-extension-pack
+Description: Popular extensions for C++ development in Visual Studio Code.
+Version: 1.3.0
 Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack
 
-Name: Language Support for Java(TM) by Red Hat
-Id: redhat.java
-Description: Java Linting, Intellisense, formatting, refactoring, Maven/Gradle support and more...
-Version: 1.20.0
-Publisher: Red Hat
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=redhat.java
-
-Name: Debugger for Java
-Id: vscjava.vscode-java-debug
-Description: A lightweight Java debugger for Visual Studio Code
-Version: 0.52.0
+Name: C/C++
+Id: ms-vscode.cpptools
+Description: C/C++ IntelliSense, debugging, and code browsing.
+Version: 1.16.3
 Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
 
-Name: Test Runner for Java
-Id: vscjava.vscode-java-test
-Description: Run and debug JUnit or TestNG test cases.
-Version: 0.39.0
+Name: C/C++ Themes
+Id: ms-vscode.cpptools-themes
+Description: UI Themes for C/C++ extension.
+Version: 2.0.0
 Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-themes
 
-Name: Maven for Java
-Id: vscjava.vscode-maven
-Description: Manage Maven projects, execute goals, generate project from archetype, improve user experience for Java developers.
-Version: 0.41.0
+Name: CMake Tools
+Id: ms-vscode.cmake-tools
+Description: Extended CMake support in Visual Studio Code
+Version: 1.14.34
 Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools
 
-Name: Project Manager for Java
-Id: vscjava.vscode-java-dependency
-Description: Manage Java projects in Visual Studio Code
-Version: 0.23.0
-Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency
-
-Name: IntelliCode
-Id: VisualStudioExptTeam.vscodeintellicode
-Description: AI-assisted development
-Version: 1.2.30
-Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode
-
-#### xml support
-Name: XML
-Id: redhat.vscode-xml
-Description: XML Language Support by Red Hat
-Version: 0.25.0
-Publisher: Red Hat
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml
-
-spring-boot support
-Name: Spring Boot Extension Pack
-Id: vmware.vscode-boot-dev-pack
-Description: A collection of extensions for developing Spring Boot applications
-Version: 0.2.1
-Publisher: VMware
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack
-
-Name: Spring Boot Tools
-Id: vmware.vscode-spring-boot
-Description: Provides validation and content assist for Spring Boot `application.properties`, `application.yml` properties files. As well as Boot-specific support for `.java` files.
-Version: 1.47.0
-Publisher: VMware
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vmware.vscode-spring-boot
-
-Name: Spring Initializr Java Support
-Id: vscjava.vscode-spring-initializr
-Description: A lightweight extension based on Spring Initializr to generate quick start Spring Boot Java projects.
-Version: 0.11.2
-Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-initializr
-
-Name: Spring Boot Dashboard
-Id: vscjava.vscode-spring-boot-dashboard
-Description: Spring Boot Dashboard for VS Code
-Version: 0.13.1
-Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-boot-dashboard
-
-#### lombok supprt
-Name: Lombok Annotations Support for VS Code
-Id: vscjava.vscode-lombok
-Description: Refactor code with Lombok annotations, or remove Lombok annotations with actual methods.
-Version: 1.1.0
-Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-lombok
-
-#### yaml suport
-Name: YAML
-Id: redhat.vscode-yaml
-Description: YAML Language Support by Red Hat, with built-in Kubernetes syntax support
-Version: 1.13.0
-Publisher: Red Hat
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
-
-#### gradle support
-Name: Gradle Extension Pack
-Id: richardwillis.vscode-gradle-extension-pack
-Description: Useful Gradle extensions
-Version: 0.0.4
-Publisher: Richard Willis
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=richardwillis.vscode-gradle-extension-pack
-
-Name: Gradle for Java
-Id: vscjava.vscode-gradle
-Description: Manage Gradle Projects, run Gradle tasks and provide better Gradle file authoring experience in VS Code
-Version: 3.12.7
-Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle
-
-Name: Gradle Language Support
-Id: naco-siren.gradle-language
-Description: Add Gradle language support for Visual Studio Code
-Version: 0.2.3
-Publisher: Naco Siren
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=naco-siren.gradle-language
+#### Better C++ Syntax
+Name: Better C++ Syntax
+Id: jeff-hykin.better-cpp-syntax
+Description: The bleeding edge of the C++ syntax
+Version: 1.17.2
+Publisher: Jeff Hykin
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax
 
 ##### remote development support
 Name: Remote Development
@@ -176,5 +88,6 @@ Description: Material Design Icons for Visual Studio Code
 Version: 4.28.0
 Publisher: Philipp Kief
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
+
 ### Install Exensions
 ![](README_files/1.jpg)
