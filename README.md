@@ -176,3 +176,5 @@ Description: Material Design Icons for Visual Studio Code
 Version: 4.28.0
 Publisher: Philipp Kief
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
+### Install Exensions
+![](README_files/1.jpg)
