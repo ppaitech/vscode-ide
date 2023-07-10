@@ -1,7 +1,7 @@
 # Visual Studio Code - IDE Jupyter
 
 ## How To Install
-### Install Ide Java
+### Install IDE Jupyter
 download from release
 ### Install extensions
 Please Download and install the following extensions manually
