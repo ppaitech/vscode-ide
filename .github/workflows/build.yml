@@ -33,13 +33,13 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: vscode-darwin-x64
-        path: ../vscode-darwin-x64
+        path: ../VSCode-darwin-x64
 
     - name: Upload build artifact x64 min
       uses: actions/upload-artifact@v3
       with:
         name: vscode-darwin-x64-min
-        path: ../vscode-darwin-x64-min
+        path: ../VSCode-darwin-x64-min
 
   build_macos_m2:
     runs-on: macos-latest
@@ -67,13 +67,13 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: vscode-darwin-arm64
-        path: ../vscode-darwin-arm64
+        path: ../VSCode-darwin-arm64
 
     - name: Upload build artifact arm64 min
       uses: actions/upload-artifact@v3
       with:
         name: vscode-darwin-arm64-min
-        path: ../vscode-darwin-arm64-min
+        path: ../VSCode-darwin-arm64-min
 
   build_ubuntu:
     runs-on: ubuntu-latest
@@ -101,13 +101,13 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: vscode-linux-x64
-        path: ../vscode-linux-x64
+        path: ../VSCode-linux-x64
 
     - name: Upload build artifact min
       uses: actions/upload-artifact@v3
       with:
         name: vscode-linux-x64-min
-        path: ../vscode-linux-x64-min
+        path: ../VSCode-linux-x64-min
 
   build_windows:
     runs-on: windows-latest
@@ -135,10 +135,10 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: vscode-win32-x64
-        path: ../vscode-win32-x64
+        path: ../VSCode-win32-x64
 
     - name: Upload build artifact min
       uses: actions/upload-artifact@v3
       with:
         name: vscode-win32-x64-min
-        path: ../vscode-win32-x64-min
+        path: ../VSCode-win32-x64-min
