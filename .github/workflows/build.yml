@@ -1,0 +1,144 @@
+name: Build vs-code
+
+on:
+  push:
+    branches: [ "ide-python" ]
+  pull_request:
+    branches: [ "ide-python" ]
+
+jobs:
+  build_macos:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout code
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '19'
+
+    - name: Install yarn
+      run: npm install -g yarn
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build Installer
+      run: |
+        yarn gulp vscode-darwin-x64
+        yarn gulp vscode-darwin-x64-min
+
+    - name: Upload build artifact x64
+      uses: actions/upload-artifact@v3
+      with:
+        name: vscode-darwin-x64
+        path: ../vscode-darwin-x64
+
+    - name: Upload build artifact x64 min
+      uses: actions/upload-artifact@v3
+      with:
+        name: vscode-darwin-x64-min
+        path: ../vscode-darwin-x64-min
+
+  build_macos_m2:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout code
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '19'
+
+    - name: Install yarn
+      run: npm install -g yarn
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build Installer
+      run: |
+        yarn gulp vscode-darwin-arm64
+        yarn gulp vscode-darwin-arm64-min
+
+    - name: Upload build artifact arm64
+      uses: actions/upload-artifact@v3
+      with:
+        name: vscode-darwin-arm64
+        path: ../vscode-darwin-arm64
+
+    - name: Upload build artifact arm64 min
+      uses: actions/upload-artifact@v3
+      with:
+        name: vscode-darwin-arm64-min
+        path: ../vscode-darwin-arm64-min
+
+  build_ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '19'
+
+    - name: Install yarn
+      run: npm install -g yarn
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build Installer
+      run: |
+        yarn gulp vscode-linux-x64
+        yarn gulp vscode-linux-x64-min
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: vscode-linux-x64
+        path: ../vscode-linux-x64
+
+    - name: Upload build artifact min
+      uses: actions/upload-artifact@v3
+      with:
+        name: vscode-linux-x64-min
+        path: ../vscode-linux-x64-min
+
+  build_windows:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout code
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '19'
+
+    - name: Install yarn
+      run: npm install -g yarn
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build Installer
+      run: |
+        yarn gulp vscode-win32-x64
+        yarn gulp vscode-win32-x64-min
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: vscode-win32-x64
+        path: ../vscode-win32-x64
+
+    - name: Upload build artifact min
+      uses: actions/upload-artifact@v3
+      with:
+        name: vscode-win32-x64-min
+        path: ../vscode-win32-x64-min
