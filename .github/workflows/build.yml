@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '19'
+        node-version: '18.15.0'
 
     - name: Install yarn
       run: npm install -g yarn
@@ -50,7 +50,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '19'
+        node-version: '18.15.0'
 
     - name: Install yarn
       run: npm install -g yarn
@@ -84,7 +84,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '19'
+        node-version: '18.15.0'
 
     - name: Install yarn
       run: npm install -g yarn
@@ -118,7 +118,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '19'
+        node-version: '18.15.0'
 
     - name: Install yarn
       run: npm install -g yarn
