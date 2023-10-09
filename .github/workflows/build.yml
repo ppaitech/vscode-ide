@@ -8,7 +8,7 @@ on:
 
 jobs:
   build_pre:
-    runs-on: macos-latest
+    runs-on: macos-latest-xlarge
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -38,7 +38,7 @@ jobs:
         path: VSCode-ide-python-darwin-x64
 
   build_macos:
-    runs-on: macos-latest
+    runs-on: macos-latest-xlarge
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -68,7 +68,7 @@ jobs:
         path: VSCode-ide-python-darwin-x64
 
   build_macos_m2:
-    runs-on: macos-latest
+    runs-on: macos-latest-xlarge
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -135,7 +135,7 @@ jobs:
         path: VSCode-ide-python-linux-x64
 
   build_windows:
-    runs-on: windows-latest
+    runs-on: windows-latest-xlarge
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
