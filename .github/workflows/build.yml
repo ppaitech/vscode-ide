@@ -183,6 +183,8 @@ jobs:
         yarn install --network-timeout 1000000
 
     - name: Build Installer
+      env:
+        NODE_OPTIONS: --max_old_space_size=14096
       run: |
         yarn gulp vscode-win32-x64
 
