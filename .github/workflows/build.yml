@@ -7,6 +7,36 @@ on:
     branches: [ "ide-python" ]
 
 jobs:
+  build_pre:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.15.0'
+
+    - name: Install yarn
+      run: npm install -g yarn
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build Installer
+      run: |
+        yarn gulp vscode-darwin-x64
+
+    - name: Move File
+      run: mv /Users/runner/work/vscode-ide/VSCode-darwin-x64 VSCode-ide-python-darwin-x64
+
+    - name: Upload build artifact x64
+      uses: actions/upload-artifact@v3
+      with:
+        name: VSCode-ide-python-darwin-x64
+        path: VSCode-ide-python-darwin-x64
+
   build_macos:
     runs-on: macos-latest
     steps:
@@ -59,7 +89,7 @@ jobs:
         yarn gulp vscode-darwin-arm64
 
     - name: Move File
-      run: mv ../VSCode-darwin-x64 VSCode-ide-python-darwin-arm64
+      run: mv ../VSCode-darwin-arm64 VSCode-ide-python-darwin-arm64
 
     - name: Upload build artifact arm64
       uses: actions/upload-artifact@v3
@@ -95,11 +125,14 @@ jobs:
       run: |
         yarn gulp vscode-linux-x64
 
+    - name: Move File
+      run: mv ../VSCode-linux-x64 VSCode-ide-python-linux-x64
+
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
       with:
-        name: vscode-linux-x64
-        path: /home/runner/work/vscode-ide/VSCode-linux-x64
+        name: VSCode-ide-python-linux-x64
+        path: VSCode-ide-python-linux-x64
 
   build_windows:
     runs-on: windows-latest
@@ -122,8 +155,11 @@ jobs:
       run: |
         yarn gulp vscode-win32-x64
 
+    - name: Move File
+      run: mv ../VSCode-win32-x64 VSCode-ide-python-win32-x64
+
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
       with:
-        name: vscode-win32-x64
-        path: D:\a\vscode-ide\VSCode-win32-x64
+        name: VSCode-ide-python-win32-x64
+        path: VSCode-ide-python-win32-x64
