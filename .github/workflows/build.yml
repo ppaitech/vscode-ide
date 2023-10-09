@@ -25,10 +25,11 @@ jobs:
       run: yarn install --network-timeout 1000000
       continue-on-error: true
 
-    - name: Check and retry install
-      if: steps.attempt-install.outcome == 'failure'
-      run: |
-        yarn install --network-timeout 1000000
+    - name: Install dependencies with retry
+      uses: nick-invision/retry@v2
+      with:
+        max_attempts: 3
+        command: yarn install --network-timeout 1000000
 
     - name: Build Installer
       run: |
