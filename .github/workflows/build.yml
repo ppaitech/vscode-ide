@@ -24,7 +24,11 @@ jobs:
     - name: Install dependencies
       run: yarn install --network-timeout 1000000
       continue-on-error: true
-      retries: 3
+
+    - name: Check and retry install
+      if: steps.attempt-install.outcome == 'failure'
+      run: |
+        yarn install --network-timeout 1000000
 
     - name: Build Installer
       run: |
@@ -56,7 +60,11 @@ jobs:
     - name: Install dependencies
       run: yarn install --network-timeout 1000000
       continue-on-error: true
-      retries: 3
+
+    - name: Check and retry install
+      if: steps.attempt-install.outcome == 'failure'
+      run: |
+        yarn install --network-timeout 1000000
 
     - name: Build Installer
       run: |
@@ -88,7 +96,11 @@ jobs:
     - name: Install dependencies
       run: yarn install --network-timeout 1000000
       continue-on-error: true
-      retries: 3
+
+    - name: Check and retry install
+      if: steps.attempt-install.outcome == 'failure'
+      run: |
+        yarn install --network-timeout 1000000
 
     - name: Build Installer
       run: |
@@ -127,7 +139,11 @@ jobs:
     - name: Install dependencies
       run: yarn install --network-timeout 1000000
       continue-on-error: true
-      retries: 3
+
+    - name: Check and retry install
+      if: steps.attempt-install.outcome == 'failure'
+      run: |
+        yarn install --network-timeout 1000000
 
     - name: Build Installer
       run: |
@@ -159,7 +175,11 @@ jobs:
     - name: Install dependencies
       run: yarn install --network-timeout 1000000
       continue-on-error: true
-      retries: 3
+
+    - name: Check and retry install
+      if: steps.attempt-install.outcome == 'failure'
+      run: |
+        yarn install --network-timeout 1000000
 
     - name: Build Installer
       run: |
