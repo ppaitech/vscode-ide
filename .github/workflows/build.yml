@@ -135,7 +135,7 @@ jobs:
       with:
         timeout_minutes: 720
         max_attempts: 3
-        command: node --max_old_space_size=14096 --network-timeout 1000000 ./node_modules/gulp/bin/gulp.js vscode-win32-x64
+        command: node --max_old_space_size=14096 ./node_modules/gulp/bin/gulp.js vscode-win32-x64
 
     - name: Move File
       run: mv ../VSCode-win32-x64 VSCode-ide-python-win32-x64
