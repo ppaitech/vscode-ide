@@ -25,12 +25,6 @@ jobs:
       run: yarn install --network-timeout 1000000
       continue-on-error: true
 
-    - name: Install dependencies with retry
-      uses: nick-invision/retry@v2
-      with:
-        max_attempts: 3
-        command: yarn install --network-timeout 1000000
-
     - name: Build Installer
       run: |
         yarn gulp vscode-darwin-x64
@@ -183,10 +177,9 @@ jobs:
         yarn install --network-timeout 1000000
 
     - name: Build Installer
-      env:
-        NODE_OPTIONS: --max_old_space_size=14096
       run: |
-        yarn gulp vscode-win32-x64
+        # yarn gulp vscode-win32-x64
+        node --max_old_space_size=14096 ./node_modules/gulp/bin/gulp.js vscode-win32-x64
 
     - name: Move File
       run: mv ../VSCode-win32-x64 VSCode-ide-python-win32-x64
