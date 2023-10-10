@@ -1,0 +1,147 @@
+name: Build vs-code
+
+on:
+  push:
+    branches: [ "ide-python" ]
+  pull_request:
+    branches: [ "ide-python" ]
+
+jobs:
+  build_macos:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.15.0'
+
+    - name: Install yarn
+      run: npm install -g yarn
+
+    - name: Install dependencies
+      run: yarn install --network-timeout 1000000
+
+    - name: Build Installer with retry
+      uses: nick-invision/retry@v2
+      with:
+        timeout_minutes: 720
+        max_attempts: 3
+        command: yarn gulp vscode-darwin-x64 --network-timeout 1000000
+
+    - name: Move File
+      run: mv /Users/runner/work/vscode-ide/VSCode-darwin-x64 VSCode-ide-python-darwin-x64
+
+    - name: Upload build artifact x64
+      uses: actions/upload-artifact@v3
+      with:
+        name: VSCode-ide-python-darwin-x64
+        path: VSCode-ide-python-darwin-x64
+
+  build_macos_m2:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.15.0'
+
+    - name: Install yarn
+      run: npm install -g yarn
+
+    - name: Install dependencies
+      run: yarn install --network-timeout 1000000
+
+    - name: Build Installer with retry
+      uses: nick-invision/retry@v2
+      with:
+        timeout_minutes: 720
+        max_attempts: 3
+        command: yarn gulp vscode-darwin-x64 --network-timeout 1000000
+
+    - name: Move File
+      run: mv ../VSCode-darwin-arm64 VSCode-ide-python-darwin-arm64
+
+    - name: Upload build artifact arm64
+      uses: actions/upload-artifact@v3
+      with:
+        name: VSCode-ide-python-darwin-arm64
+        path: VSCode-ide-python-darwin-arm64
+
+
+  build_ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.15.0'
+
+    - name: Install yarn
+      run: npm install -g yarn
+
+    - name: install library
+      run: |
+        sudo apt-get update
+        sudo apt-get install libkrb5-dev
+
+
+    - name: Install dependencies
+      run: yarn install --network-timeout 1000000
+
+    - name: Build Installer with retry
+      uses: nick-invision/retry@v2
+      with:
+        timeout_minutes: 720
+        max_attempts: 3
+        command: yarn gulp vscode-darwin-x64 --network-timeout 1000000
+
+    - name: Move File
+      run: mv ../VSCode-linux-x64 VSCode-ide-python-linux-x64
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: VSCode-ide-python-linux-x64
+        path: VSCode-ide-python-linux-x64
+
+  build_windows:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.15.0'
+
+    - name: Install yarn
+      run: npm install -g yarn
+
+    - name: Install dependencies
+      run: yarn install --network-timeout 1000000
+
+    - name: Build Installer with retry
+      uses: nick-invision/retry@v2
+      with:
+        timeout_minutes: 720
+        max_attempts: 3
+        command: node --max_old_space_size=14096 --network-timeout 1000000 ./node_modules/gulp/bin/gulp.js vscode-win32-x64
+
+    - name: Move File
+      run: mv ../VSCode-win32-x64 VSCode-ide-python-win32-x64
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: VSCode-ide-python-win32-x64
+        path: VSCode-ide-python-win32-x64
