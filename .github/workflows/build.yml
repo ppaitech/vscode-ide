@@ -2,9 +2,9 @@ name: Build vs-code
 
 on:
   push:
-    branches: [ "ide-python" ]
+    branches: [ "ide-photos" ]
   pull_request:
-    branches: [ "ide-python" ]
+    branches: [ "ide-photos" ]
 
 jobs:
   build_macos:
